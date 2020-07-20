@@ -1,0 +1,23 @@
+{
+  "name": "php_develop_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://code.assemblerschool.com/jaime-botet/develop-your-project-in-php.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,12 @@
+{
+    "name": "hadha/php_develop_project",
+    "require": {
+        "phpunit/phpunit": "^9.2"
+    },
+    "authors": [
+        {
+            "name": "JaimeBotet",
+            "email": "jaime.90.botet@gmail.com"
+        }
+    ]
+}
