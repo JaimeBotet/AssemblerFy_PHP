@@ -17,6 +17,9 @@ $("#searchbar").on('input propertychange', function() {
     success: function(data) {
       let results = data.results;
 
+
+      $("#card_container").empty();
+      
       for (let result of results) {
         $("#card_container").append(
           `

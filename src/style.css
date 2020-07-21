@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(82, 82, 99);
+}
+.assembler_logo{
+    width: 30px;
+}
+.results_container{
+    height: 78vh;
+    background-color: darkcyan;
+    overflow-y: hidden;
+}
+.card{
+    max-width: 22vw;
+}
