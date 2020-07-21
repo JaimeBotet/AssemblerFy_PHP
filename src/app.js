@@ -1,12 +1,12 @@
 $(document).ready(function() {
-  $(document).ajaxStart((e) => {
-    $(".loading").show()
-  })
-
-
+  
+  
   $("#searchbar").on('keypress', function(e) {
-
+    
     if(e.which == 13) {
+      $(document).ajaxStart((e) => {
+        $(".loading").show()
+      })
       let search = $("#searchbar").val();
       let type = $("#select").children(":selected").attr("id");;
 
