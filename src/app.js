@@ -1,14 +1,20 @@
 
 $(document).ready(function() {
+  $(document).ajaxStart((e) => {
+    $(".loading").show()
+  })
+
 
   $("#searchbar").on('keypress', function(e) {
 
-
+    
+    
     if(e.which == 13) {
       let search = $("#searchbar").val();
-  
+      
       e.preventDefault();
       console.log(search);
+    
     
     $.ajax({
       url: "search.php",
@@ -40,11 +46,16 @@ $(document).ready(function() {
          }
        }
      })
+    
     } 
   })
 
 
+  $(document).ajaxComplete((e) => {
 
+    $(".loading").hide()
+
+  })
 
 
 });

@@ -23,3 +23,13 @@ body {
 .card{
     max-width: 22vw;
 }
+.loading{
+    display: none;
+    font-size: 30px;
+    min-height: 500px;
+    width: 100%;
+}
+.loading::after{
+    
+    content: "loanding...";
+}
