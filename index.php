@@ -17,9 +17,21 @@ require "./html/head.php";
                     <a class="navbar-brand text-light page_title" href="#">Assemblerfy</a>
                 </div>
                 <div class="col-4">
-                    <form class="form-inline my-2">
-                        <input class="form-control mr-sm-2 w-75" type="search" id="searchbar" name="search" placeholder="Search" aria-label="Search">
-                    </form>
+                    
+                        <input class="form-control mr-sm-2 w-100" type="search" id="searchbar" name="search" placeholder="Search" aria-label="Search">
+                        <div class = "d-flex">
+                            <select class="form-control form-control-sm w-20 mr-3 mt-2" id="type">
+                                <option id="song">Song</option>
+                                <option id="album">Album</option>
+                                <option id="musicVideo">Music Video</option>
+                            </select>
+                            <select class="form-control form-control-sm w-20 mr-3 mt-2" id="limit">
+                                <option value="25">25 results</option>
+                                <option value="50">50 results</option>
+                                <option value="100">100 results</option>
+                            </select>
+                        </div>
+                    
                 </div>
                 <div class="col-4">
                     <ul class="navbar-nav my-2 d-flex justify-content-around">
@@ -36,15 +48,16 @@ require "./html/head.php";
         <!-- Then a main container where we are showing random videos  -->
         <!-- This container will contain the result of the search -> without refreshing the page?  -->
         <div id="card_container" class="results_container mt-2 rounded-sm d-flex p-3 flex-wrap justify-content-around">
-            
+        <div class="loading"></div>
+
         </div>
 
     </main>
     <!-- And below of the page, the footer  -->
 
-    
+
     <?php require "html/footer.php"; ?>
-   
+
 </body>
 
 </html>
