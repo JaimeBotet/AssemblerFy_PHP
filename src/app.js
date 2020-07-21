@@ -5,7 +5,11 @@ $(document).ready(function() {
 
 
     if(e.which == 13) {
+
       let search = $("#searchbar").val();
+      let type = $("#select").children(":selected").attr("id");;
+
+      console.log(type);
   
       e.preventDefault();
       console.log(search);
@@ -13,7 +17,7 @@ $(document).ready(function() {
     $.ajax({
       url: "search.php",
       method: "GET",
-      data: {search:search},
+      data: {search:search, type:type},
       success: function(data) {
         console.log(data);
         let response = JSON.parse(data);
@@ -24,20 +28,38 @@ $(document).ready(function() {
   
         $("#card_container").empty();
   
-        for (let result of results) {
-          $("#card_container").append(
-            `
-            <div class="card m-2">
-              <img src="${result.artworkUrl100}" class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">${result.artistName}</h5>
-                  <p class="card-text">${result.trackCensoredName}</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+        if (type == "album") {
+          for (let result of results) {
+            $("#card_container").append(
+              `
+              <div class="card m-2">
+                <img src="${result.artworkUrl100}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${result.artistName}</h5>
+                    <p class="card-text">${result.collectionCensoredName}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
               </div>
-            </div>
-            `
-          )
-         }
+              `
+            )
+           }
+
+        } else (type == "song") {
+          for (let result of results) {
+            $("#card_container").append(
+              `
+              <div class="card m-2">
+                <img src="${result.artworkUrl100}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${result.artistName}</h5>
+                    <p class="card-text">${result.trackName}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              `
+            )
+           }
+        }   
        }
      })
     } 

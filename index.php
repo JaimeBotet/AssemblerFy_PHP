@@ -19,6 +19,11 @@ require "./html/head.php";
                 <div class="col-4">
                     
                         <input class="form-control mr-sm-2 w-75" type="search" id="searchbar" name="search" placeholder="Search" aria-label="Search">
+                        <select class="form-control form-control-sm w-50 mt-3" id="select">
+                            <option id="song">Song</option>
+                            <option id="album">Album</option>
+                            <option id="musicVideo">Music Video</option>
+                        </select>
                     
                 </div>
                 <div class="col-4">
