@@ -30,9 +30,6 @@ require "./html/head.php";
                         <li class="nav-item w-25">
                             <button class="btn btn-primary w-100">Register</button>
                         </li>
-                        <li class="nav-item w-25">
-                            <button class="btn btn-info w-100">Admin</button>
-                        </li>
                     </ul>
                 </div>
             </div>
