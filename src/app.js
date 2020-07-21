@@ -61,13 +61,21 @@ $(document).ready(function() {
     }
   })
 
-  // $("#login_btn").click( ()=>{
-  //   $.ajax("../loging.php")
-  //   .
-  // })
-  // $("#register_btn").click( ()=>{
-  //   $.ajax("../register.php")
-  // })
+  $("#login_btn").click( ()=>{
+    $.ajax("../loging.php")
+    .done(function(data){
+
+    })
+  })
+
+  $("#register_btn").click( ()=>{
+    $.ajax("../register.php")
+    .done(function(data){
+
+    })
+  })
+
+
   $(document).ajaxComplete((e) => {
     $(".loading").hide()
   })
