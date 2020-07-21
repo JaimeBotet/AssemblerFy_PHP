@@ -15,17 +15,17 @@ require "./html/head.php";
     <div class="container py-3 ">
         <div class="row ">
             <div class="col-md-12">
-                <h2 class="text-center mb-3">Register User</h2>
+                <h2 class="text-center mr-5 mb-3">Register User</h2>
                 <!-- nav -->
                 <hr class="mb-4 ">
 
-                <div class="row justify-content-center">
+                <div class="row justify-content-center" style="width:80rem">
                     <div class="col-md-6">
                         <!-- form card register -->
-                        <div class="card card-outline-secondary">
-                            <div class="card-header">
+                        <div class="card card-outline-secondary " >
+                            <div class="card-header" >
                            
-                                <h3 class="mb-0 text-center text-dark">Enter New User</h3> 
+                                <h3 class="mb-0 text-center ">Enter New User</h3> 
                                 <small id="user_exist"></small>
                             </div>
                             <div class="card-body bg-dark ">
