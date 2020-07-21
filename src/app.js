@@ -61,6 +61,13 @@ $(document).ready(function() {
     }
   })
 
+  $("#login_btn").click( ()=>{
+    $.ajax("../loging.php")
+    .
+  })
+  $("#register_btn").click( ()=>{
+    $.ajax("../register.php")
+  })
   $(document).ajaxComplete((e) => {
     $(".loading").hide()
   })

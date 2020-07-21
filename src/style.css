@@ -33,3 +33,6 @@ body {
     
     content: "loanding...";
 }
+.error{
+    color: red;
+}
