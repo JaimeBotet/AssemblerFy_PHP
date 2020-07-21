@@ -7,8 +7,8 @@ $(document).ready(function() {
     if(e.which == 13) {
       let search = $("#searchbar").val();
   
-    e.preventDefault();
-    console.log(search);
+      e.preventDefault();
+      console.log(search);
     
     $.ajax({
       url: "search.php",

@@ -17,9 +17,9 @@ require "./html/head.php";
                     <a class="navbar-brand text-light page_title" href="#">Assemblerfy</a>
                 </div>
                 <div class="col-4">
-                    <form class="form-inline my-2">
+                    
                         <input class="form-control mr-sm-2 w-75" type="search" id="searchbar" name="search" placeholder="Search" aria-label="Search">
-                    </form>
+                    
                 </div>
                 <div class="col-4">
                     <ul class="navbar-nav my-2 d-flex justify-content-around">
