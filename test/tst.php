@@ -1,31 +1,63 @@
 <?php 
 
-$url = "./data.json";
-
-$jsonfile = file_get_contents($url);
-
-$stringJson = json_decode($jsonfile);
-
-echo "<pre>";
+/**************************************************
+ * ---- Test for array inside array of a obj ---- *
+ **************************************************/
+// echo "<pre>";
 // var_dump($stringJson);
-// $stringJson[0]->userID = 12334;
-// $stringJson[0]->data[0]->trackId = 1;
-$newObj = new stdClass();
+// $stringJson[0]->userID; // return userID of the first object or object with index 0
+// $stringJson[0]->data[0]->trackId; // return trackId of the first data of the first object
 
-$newObj->userID = count($stringJson);
-$newObj->userName = "Pau";
-$newObj->lastName = "idk :V";
+/**************************************************
+ * ----- Example for new object with session----- * 
+ **************************************************/ 
 
-for ($i =0; $i < count($stringJson); $i++){
-    
-    var_dump($stringJson[$i]->userID = 000+$i);
+// $newObj = new stdClass();
+// $newObj->userID = count($stringJson)+1; // add id always the lasta index of array plus one 
+// $newObj->userName = $_SESSION["user-name"];
+// $newObj->lastName = $_SESSION["last-name"];
+// $newObj->data = new array()
 
-};
+function getObj()
+{
+  // path of json 
+  $url = "./test/tst.json";
+  // get the content json
+  $jsonfile = file_get_contents($url);
+  // parse to string
+  $stringJson = json_decode($jsonfile);
 
-array_push($stringJson,$newObj);
-
-$json = json_encode($stringJson);
-file_put_contents($url,$json);
+  return $stringJson;
+}
 
 
-?>
+function searchByUserName(ArrayObject $obj ,string $user)
+{
+  //iterate arrayobjects
+  for ($i =0; $i < count($obj); $i++)
+  {
+    //search user of all object arrays
+    if($obj[$i]->userName == $user)
+    {
+      return $obj;
+    };
+  };
+  echo "user not found";
+}
+
+function addNewObj(arrayObject $mainObj, object $newObj )
+{
+  // push the new obj, new obj is too new user
+  array_push($mainObj,$newObj);
+  // return the new obj with the new data 
+  return $mainObj;
+}
+
+function saveJson(ArrayObject $mainObj, string $url)
+{
+  // convert to json 
+  $json = json_encode($mainObj);
+  // overwrite file.json
+  file_put_contents($url,$json);
+}
+  
