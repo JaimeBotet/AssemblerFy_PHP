@@ -17,14 +17,12 @@ require "./html/head.php";
                     <a class="navbar-brand text-light page_title" href="#">Assemblerfy</a>
                 </div>
                 <div class="col-4">
-                    
-                        <input class="form-control mr-sm-2 w-75" type="search" id="searchbar" name="search" placeholder="Search" aria-label="Search">
-                        <select class="form-control form-control-sm w-50 mt-3" id="select">
-                            <option id="song">Song</option>
-                            <option id="album">Album</option>
-                            <option id="musicVideo">Music Video</option>
-                        </select>
-                    
+                    <input class="form-control mr-sm-2 w-75" type="search" id="searchbar" name="search" placeholder="Search" aria-label="Search">
+                    <select class="form-control form-control-sm w-50 mt-3" id="select">
+                        <option id="song">Song</option>
+                        <option id="album">Album</option>
+                        <option id="musicVideo">Music Video</option>
+                    </select>
                 </div>
                 <div class="col-4">
                     <ul class="navbar-nav my-2 d-flex justify-content-around">
@@ -42,15 +40,15 @@ require "./html/head.php";
         <!-- This container will contain the result of the search -> without refreshing the page?  -->
         <div id="card_container" class="results_container mt-2 rounded-sm d-flex p-3 flex-wrap justify-content-around">
         <div class="loading"></div>
-            
+
         </div>
 
     </main>
     <!-- And below of the page, the footer  -->
 
-    
+
     <?php require "html/footer.php"; ?>
-   
+
 </body>
 
 </html>

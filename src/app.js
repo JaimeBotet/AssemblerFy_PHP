@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   $(document).ajaxStart((e) => {
     $(".loading").show()
@@ -7,18 +6,12 @@ $(document).ready(function() {
 
   $("#searchbar").on('keypress', function(e) {
 
-    
-    
     if(e.which == 13) {
-
       let search = $("#searchbar").val();
       let type = $("#select").children(":selected").attr("id");;
 
       console.log(type);
-  
-      
       e.preventDefault();
-       
       $.ajax({
         url: "search.php",
         method: "GET",
@@ -27,12 +20,10 @@ $(document).ready(function() {
           console.log(data);
           let response = JSON.parse(data);
           let results = response.results;
-    
+
           console.log(results)
-    
-    
           $("#card_container").empty();
-    
+
           if (type == "album") {
             for (let result of results) {
               $("#card_container").append(
@@ -48,8 +39,7 @@ $(document).ready(function() {
                 `
               )
             }
-
-          } else (type == "song") {
+          } else{
             for (let result of results) {
               $("#card_container").append(
                 `
@@ -64,19 +54,13 @@ $(document).ready(function() {
                 `
               )
             }
-          }   
+          }
         }
       })
-    
-    } 
+    }
   })
-
 
   $(document).ajaxComplete((e) => {
-
     $(".loading").hide()
-
   })
-
-
 });
