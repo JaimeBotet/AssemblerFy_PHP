@@ -13,8 +13,8 @@ require "./html/head.php";
         <nav class="navbar navbar-expand-lg navbar-light bg-dark rounded-sm">
             <div class="d-flex justify-content-between w-100">
                 <div class="col-4">
-                    <img class="assembler_logo my-2" src="https://media-exp1.licdn.com/dms/image/C560BAQHR2BMbsLm7zQ/company-logo_200_200/0?e=2159024400&v=beta&t=6CkD1A_wUzSd4CM7zn6mjo9AybK5aReonvFkuOI0WMo">
-                    <a class="navbar-brand text-light my-2" href="#">Assemblerfy</a>
+                    <img class="assembler_logo mb-3" src="https://media-exp1.licdn.com/dms/image/C560BAQHR2BMbsLm7zQ/company-logo_200_200/0?e=2159024400&v=beta&t=6CkD1A_wUzSd4CM7zn6mjo9AybK5aReonvFkuOI0WMo">
+                    <a class="navbar-brand text-light page_title" href="#">Assemblerfy</a>
                 </div>
                 <div class="col-4">
                     <form class="form-inline my-2">
