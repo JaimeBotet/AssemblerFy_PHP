@@ -25,7 +25,7 @@ require "./html/head.php";
                                 <option id="album">Album</option>
                                 <option id="musicVideo">Music Video</option>
                             </select>
-                            <select class="form-control form-control-sm w-20 mr-3 mt-2" id="limit">
+                            <select class="form-control form-control-sm w-20 mt-2" id="limit">
                                 <option value="25">25 results</option>
                                 <option value="50">50 results</option>
                                 <option value="100">100 results</option>
