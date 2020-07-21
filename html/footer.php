@@ -1,11 +1,9 @@
-<footer>
-    <ul class="list-footer">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Delivery</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Help</a></li>
+<footer class="d-flex justify-content-center my-2 text-white">
+    <ul class="list-footer list-group list-group-horizontal">
+        <li class="list-group-item bg-dark"><a href="#">About</a></li>
+        <li class="list-group-item bg-dark"><a href="#">Blog</a></li>
+        <li class="list-group-item bg-dark"><a href="#">Contact</a></li>
+        <li class="list-group-item bg-dark"><a href="#">Help</a></li>
+        <li class="list-group-item copyright bg-dark">&copy; <i>2020 Assemblerfy</i></li>
     </ul>
-    <p class="copyrights">&copy; <i>2020 Assemblerfy</i></p>
 </footer>
