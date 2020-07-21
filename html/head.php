@@ -13,5 +13,5 @@ error_reporting(0);
     <!--PHP-Forms links-->
     <link href="src/style.css" rel="stylesheet"/>
     <!-- <link href="../src/style.css" rel="stylesheet"/> -->
-    <script src="src/appx.js"></script>
+    <script src="src/app.js"></script>
 </head>
