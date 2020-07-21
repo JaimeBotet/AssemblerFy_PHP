@@ -14,4 +14,6 @@ error_reporting(0);
     <link href="src/style.css" rel="stylesheet"/>
     <!-- <link href="../src/style.css" rel="stylesheet"/> -->
     <script src="src/app.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
