@@ -22,7 +22,7 @@
 $url = "../data/data.json";
 
 
-function getObj($url)
+function getObj($url) : arrayObject
 {
   // get the content json
   $jsonfile = file_get_contents($url);
@@ -33,7 +33,7 @@ function getObj($url)
 }
 
 
-function searchByUserName(ArrayObject $obj ,string $user)
+function searchByUserName(ArrayObject $obj ,string $user) : Stdclass
 {
   //iterate arrayobjects
   for ($i =0; $i < count($obj); $i++)
@@ -47,7 +47,7 @@ function searchByUserName(ArrayObject $obj ,string $user)
   echo "user not found";
 }
 
-function addNewObj(arrayObject $mainObj, object $newObj )
+function addNewObj(arrayObject $mainObj, object $newObj ) : arrayObject
 {
   // push the new obj, new obj is too new user
   array_push($mainObj,$newObj);
@@ -55,7 +55,7 @@ function addNewObj(arrayObject $mainObj, object $newObj )
   return $mainObj;
 }
 
-function saveJson(ArrayObject $mainObj, string $url)
+function saveJson(ArrayObject $mainObj, string $url) : void
 {
   // convert to json 
   $json = json_encode($mainObj);
