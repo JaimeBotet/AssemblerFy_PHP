@@ -12,7 +12,7 @@ echo "<pre>";
 // $stringJson[0]->data[0]->trackId = 1;
 $newObj = new stdClass();
 
-$newObj->userID = count($stringJson) + 1;
+$newObj->userID = count($stringJson);
 $newObj->userName = "Pau";
 $newObj->lastName = "idk :V";
 
