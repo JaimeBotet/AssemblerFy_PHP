@@ -7,30 +7,24 @@ $(document).ready(function() {
 
   $("#searchbar").on('keypress', function(e) {
 
-    
-    
     if(e.which == 13) {
 
       let search = $("#searchbar").val();
-      let type = $("#select").children(":selected").attr("id");;
-
-      console.log(type);
-  
+      let type = $("#type").children(":selected").attr("id");
+      let limit = $("#limit").children(":selected").attr("value");
       
       e.preventDefault();
        
       $.ajax({
         url: "search.php",
         method: "GET",
-        data: {search:search, type:type},
+        data: {search:search, type:type, limit:limit},
         success: function(data) {
-          console.log(data);
           let response = JSON.parse(data);
           let results = response.results;
-    
+
           console.log(results)
-    
-    
+ 
           $("#card_container").empty();
     
           if (type == "album") {
@@ -49,7 +43,7 @@ $(document).ready(function() {
               )
             }
 
-          } else (type == "song") {
+          } else {
             for (let result of results) {
               $("#card_container").append(
                 `
@@ -77,6 +71,5 @@ $(document).ready(function() {
     $(".loading").hide()
 
   })
-
 
 });
