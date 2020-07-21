@@ -18,10 +18,12 @@
 // $newObj->lastName = $_SESSION["last-name"];
 // $newObj->data = new array()
 
-function getObj()
+// path of json 
+$url = "./test/tst.json";
+
+
+function getObj($url)
 {
-  // path of json 
-  $url = "./test/tst.json";
   // get the content json
   $jsonfile = file_get_contents($url);
   // parse to string
