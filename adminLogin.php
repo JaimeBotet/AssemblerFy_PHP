@@ -1,28 +1,26 @@
 
+
 <?php
-include "./test/tst.php";
+include "./server/tst.php";
 
-
+$name_error = "";
+$email_error = "";
+$password_error = "";
 
 if (isset($_POST['submit'])) {
-    // $arr = array();
-    $saveTojson = "userlogin.json";
+    $saveTojson = "./data/userlogin.json";
     $json = file_get_contents($saveTojson);
     $string = json_decode($json);
 
-    // main arr 
-    // $newArr = new array();
-    // obj contructor
-    // $obj = new stdClass();
-    // $obj->id = count($string) + 1;
-    // $obj->userName = $_POST["username"];
-    // $obj->email = $_POST["email"];
-    // $obj->password = $_POST["password"];
     for ($i = 0; $i < count($string); $i++) {
-        if ($string[$i]->userName == $_POST["username"] && $string[$i]->email == $_POST["email"] && $string[$i]->password == $_POST["password"]) {
+        $username = $string[$i]->userName == $_POST["username"];
+        $password = $string[$i]->password == $_POST["password"];
+        $email = $string[$i]->email == $_POST["email"];
+
+        if ($username && $password && $email) {
             echo 'user exist';
-            break;
-        } else {
+             break;
+        }else {
             $obj = new stdClass();
             $obj->id = count($string) + 1;
             $obj->userName = $_POST["username"];
@@ -34,16 +32,18 @@ if (isset($_POST['submit'])) {
             echo $json_string;
             break;
         }
+        
     }
-
-    // arrpush
-    // array_push($string, $obj);
-
-    // save json
-    // $json_string = json_encode($string, JSON_PRETTY_PRINT);
-    // file_put_contents($saveTojson, $json_string);
-    // echo $json_string;
 }
+
+// arrpush
+// array_push($string, $obj);
+
+// save json
+// $json_string = json_encode($string, JSON_PRETTY_PRINT);
+// file_put_contents($saveTojson, $json_string);
+// echo $json_string;
+
 
 
 
