@@ -34,9 +34,16 @@ require "./html/head.php";
     //Takes all products on JSON and print theme on Home-Screen.
     ?>
     <main class="container-fluid pt-5 pb-5">
-        
+
+  
+    <input type="text" id="searchbar" name="search"> 
+       
+
+
     </main>
     <?php require "html/footer.php"; ?>
+
+    <script src="src/app.js"></script>
 </body>
 
 </html>
