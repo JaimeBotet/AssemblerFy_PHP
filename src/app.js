@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   $(document).ajaxStart((e) => {
     $(".loading").show()
@@ -8,13 +7,11 @@ $(document).ready(function() {
   $("#searchbar").on('keypress', function(e) {
 
     if(e.which == 13) {
-
       let search = $("#searchbar").val();
       let type = $("#type").children(":selected").attr("id");
       let limit = $("#limit").children(":selected").attr("value");
       
       e.preventDefault();
-       
       $.ajax({
         url: "search.php",
         method: "GET",
@@ -26,7 +23,7 @@ $(document).ready(function() {
           console.log(results)
  
           $("#card_container").empty();
-    
+
           if (type == "album") {
             for (let result of results) {
               $("#card_container").append(
@@ -58,18 +55,13 @@ $(document).ready(function() {
                 `
               )
             }
-          }   
+          }
         }
       })
-    
-    } 
+    }
   })
-
 
   $(document).ajaxComplete((e) => {
-
     $(".loading").hide()
-
   })
-
 });

@@ -1,7 +1,6 @@
 <?php
 
 if(isset($_GET["search"])) {
-
   $search = $_GET["search"];
   $entity = $_GET["type"];
   $limit = $_GET["limit"];
