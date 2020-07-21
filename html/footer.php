@@ -1,5 +1,5 @@
-<footer class="d-flex justify-content-center my-2 text-white">
-    <ul class="list-footer list-group list-group-horizontal">
+<footer class="d-flex justify-content-center my-1 text-white">
+    <ul class="list-footer list-group list-group-horizontal shadow">
         <li class="list-group-item bg-dark"><a href="#">About</a></li>
         <li class="list-group-item bg-dark"><a href="#">Blog</a></li>
         <li class="list-group-item bg-dark"><a href="#">Contact</a></li>
