@@ -27,10 +27,10 @@ require "./html/head.php";
                 <div class="col-4">
                     <ul class="navbar-nav my-2 d-flex justify-content-around">
                         <li class="nav-item w-25">
-                            <button class="btn btn-primary my-auto w-100">Login</button>
+                            <button class="btn btn-primary my-auto w-100" id="login_btn">Login</button>
                         </li>
                         <li class="nav-item w-25">
-                            <button class="btn btn-primary w-100">Register</button>
+                            <button class="btn btn-primary w-100" id="register_btn">Register</button>
                         </li>
                     </ul>
                 </div>
