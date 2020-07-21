@@ -1,3 +1,8 @@
+<?php
+    session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,38 +13,41 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="bg-dark text-white">
     <div class="container py-3 ">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row ">
+            <div class="col-md-12" >
                 <h2 class="text-center mb-3">Admin page</h2>
                 <!-- nav -->
-                <hr class="mb-4">
+                <hr class="mb-4 ">
 
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <!-- form card register -->
                         <div class="card card-outline-secondary">
                             <div class="card-header">
-                                <h3 class="mb-0">Sign in</h3>
+                                <h3 class="mb-0 text-center text-dark">Sign in</h3>
                             </div>
-                            <div class="card-body ">
-                                <form autocomplete="off" class="form " role="form">
+                            <div class="card-body bg-dark ">
+                                <form autocomplete="off" class="form " role="form" action="adminLogin.php" method="POST">
                                     <div class="form-group">
-                                        <label for="inputName">Name</label>
-                                        <input class="form-control" id="inputName" placeholder="Full name" type="text">
+                                        <label for="inputName">Username</label>
+                                        <input class="form-control" id="username" name="username" placeholder="Full name" type="text">
+                                        <small>hello</small>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputEmail3">Email</label>
-                                        <input class="form-control" id="inputEmail3" placeholder="Email" required="" type="email">
+                                        <input class="form-control" id="email" name="email" placeholder="Email" required="" type="email">
+                                        <small>hello</small>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputPassword3">Password</label>
-                                        <input class="form-control" id="inputPassword3" placeholder="Password" required="" type="password">
+                                        <input class="form-control" id="password" placeholder="Password" required="" name="password" type="password">
+                                        <small>hello</small>
                                         <small class="form-text text-muted" id="passwordHelpBlock">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn btn-success btn-lg float-right" type="submit">Login</button>
+                                        <button class="btn btn-success btn-lg float-right" type="submit" name="submit">Login</button>
                                     </div>
                                 </form>
                             </div>
@@ -52,8 +60,7 @@
         <!--/row-->
     </div>
     <!--/container-->
-
-
+ 
 
 
 
