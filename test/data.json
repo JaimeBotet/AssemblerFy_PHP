@@ -1,0 +1,28 @@
+[{
+  "userID": 0,
+  "userName": "Guillermo",
+  "lastName": "valdez",
+  "data": [{
+    "trackId": 1,
+    "endpoint": ""
+  }, {
+    "term": "baby-metal",
+    "endpoint": ""
+  }]
+}, {
+  "userID": 1,
+  "userName": "Guillermo",
+  "lastName": "valdez",
+  "data": [{
+    "trackId": 1,
+    "endpoint": ""
+  }]
+}, {
+  "userID": 2,
+  "userName": "Guillermo",
+  "lastName": "valdez",
+  "data": [{
+    "trackId": 1,
+    "endpoint": ""
+  }]
+}]
