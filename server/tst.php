@@ -19,7 +19,7 @@
 // $newObj->data = new array()
 
 // path of json 
-$url = "./test/tst.json";
+$url = "../data/data.json";
 
 
 function getObj($url)
@@ -41,7 +41,7 @@ function searchByUserName(ArrayObject $obj ,string $user)
     //search user of all object arrays
     if($obj[$i]->userName == $user)
     {
-      return $obj;
+      return $obj[$i];
     };
   };
   echo "user not found";
