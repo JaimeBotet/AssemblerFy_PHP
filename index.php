@@ -41,6 +41,7 @@ require "./html/head.php";
         <!-- Then a main container where we are showing random videos  -->
         <!-- This container will contain the result of the search -> without refreshing the page?  -->
         <div id="card_container" class="results_container mt-2 rounded-sm d-flex p-3 flex-wrap justify-content-around">
+        <div class="loading"></div>
             
         </div>
 
