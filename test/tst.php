@@ -19,10 +19,10 @@
 // $newObj->data = new array()
 
 // path of json 
-$url = "./test/tst.json";
 
 
-function getObj($url) : arrayObject
+
+function getObj( string $url) : arrayObject
 {
   // get the content json
   $jsonfile = file_get_contents($url);
