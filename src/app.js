@@ -29,10 +29,48 @@ $(document).ready(function() {
   })
 
   //if in the url looks like index.php?user_id=${user_id}  then it means we have an active session
-  // if(url.contains("user_id")){
-  //   foreach(...)
-  // }
+  
+  // setting url just to test the functionality
+  
+  //history.pushState({page: 1}, "title 1", "?user_id=2")
+  
+  let url = window.location.href; 
 
+  if (url.includes("user_id")) {
+
+    $.get("preferences.php", function(data) {
+
+      let response = JSON.parse(data);
+      let favorites = response.results;
+      console.log(favorites);
+
+      $("#card_container").empty();
+      
+      for (let result of favorites) {
+        
+        $("#card_container").append(
+          `
+          <div class="card col-3 col-md-4 col-sm-6 text-center my-5">
+                  <img src="${result.artworkUrl100.replace("100x100", "1000x1000")}" class="card-img-top my-3 w-100">
+                  <div class="card-body w-100">
+                      <h5 class="card-title">${result.artistName}</h5>
+                      <p class="card-text py-4">${result.trackName}</p>
+                      <div class="card-text py-2">
+                        <audio width="100%" height="auto" controls>
+                          <source src="${result.previewUrl}" >
+                          no disponible
+                        </audio>
+                      </div>
+                      <div class="btn btn-primary w-50 mx-auto" data="${result.trackId}">Play</div>
+                  </div>
+                </div>
+          `
+        )
+      }
+
+    })
+  }
+  
   // Search bar functionality
 
   $("#searchbar").on('keypress', function(e) {
