@@ -113,11 +113,17 @@ $(document).ready(function() {
   })
 
   $("#login_btn").click( ()=>{
-    location.href = "./login.php";
-    $.ajax("./loging.php")
-    .done(function(data){
+    if($("#login_btn").val()=="Login"){
+      location.href = "./login.php";
+    }
+    else if($("#login_btn").val()=="Sign Out"){
+      //End session and change the button value
+      $("#login_btn").val()=="Login";
+    }
+    // $.ajax("./loging.php")
+    // .done(function(data){
 
-    })
+    // })
   })
 
   $("#register_btn").click( ()=>{
