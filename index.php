@@ -50,7 +50,7 @@ require "./html/head.php";
                 <ul class="navbar form-inline d-flex justify-content-around custom-dot mb-0">
                     <li class=" col-5 ">
                         <button class="btn btn-primary w-100 custom-min" id="login_btn">
-                            <?php if (isset($_SESSION['username'])){ ?>
+                            <?php if (isset($_SESSION['userName'])){ ?>
                             Sign Out
                             <?php } else { ?>
                             Login
@@ -59,7 +59,7 @@ require "./html/head.php";
                     </li>
                     <li class=" col-5">
                         <button class="btn btn-primary w-100 custom-min" id="register_btn"
-                        <?php if (isset($_SESSION['username'])){ ?>
+                        <?php if (isset($_SESSION['userName'])){ ?>
                             style="display: none;"
                         <?php } else { ?>
                             style="display: block;"

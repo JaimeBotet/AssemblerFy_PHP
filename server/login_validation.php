@@ -15,26 +15,23 @@ if(isset($_POST['submit'])){
         $error .= '&passErr';
     }
     if(strlen($error) > 0){
-        header('Location:login.php?'.$error);
+        header('Location:../login.php?'.$error);
         // echo $error;
     }else{ 
-    $file=file_get_contents("data/userlogin.json");
+    $file=file_get_contents("../data/userlogin.json");
     $json = json_decode($file);
 
     foreach($json as $user){
         if($user->userName == $username && $user->password == $password){
-            $_SESSION[$username];
-            $_SESSION[$user->user_id];
-            $_SESSION[$user->userCategory];
+            $_SESSION['userName'] = $username;
+            $_SESSION['user_id'] = $user->user_id;
+            $_SESSION['password'] = $password;
             if($user->userCategory == "user"){
-            
-                header("Location:index.php");
-                exit();
+                header("Location: ../index.php");
             }elseif($user->userCategory == "admin") {
-                header('Location:adminpanel.php');
-                exit();
+                header('Location: ../adminpanel.php');
             }
-            
+            exit();
         }
     }
     echo "username or password invalid ";

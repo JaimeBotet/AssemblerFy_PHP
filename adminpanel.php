@@ -40,7 +40,7 @@ require "./html/head.php";
                 <tr>
                   <th scope="col">User Id</th>
                   <th scope="col">User Name</th>
-                  <th scope="col">Deatils</th>
+                  <th scope="col">Details</th>
                 </tr>
               </thead>
               <tbody id="table_body" class="table-info bg-light">         
@@ -87,10 +87,17 @@ require "./html/head.php";
 
     </main>
     <!-- And below of the page, the footer  -->
-
-
     <?php require "html/footer.php"; ?>
 
+
+    <script>
+      $("#logout_btn").click( ()=>{
+        $.ajax("server/signout.php")
+        .done(function(data){
+          location.href = "./index.php";
+        })
+      })
+    </script>
 </body>
 
 </html>

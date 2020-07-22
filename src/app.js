@@ -115,19 +115,22 @@ $(document).ready(function() {
 
   $("#login_btn").click( ()=>{
     // console.log($("#login_btn").text());
-    let btn_text = $("#login_btn").text().toString();
-    console.log(btn_text);
+    let btn_text = $("#login_btn").text().trim();
+
     if(btn_text === "Login"){
       location.href = "./login.php";
     }
-    else if($("#login_btn").text()=="Sign Out"){
-      console.log("this is not login");
-      $.ajax("./signout.php")
+    else if(btn_text === "Sign Out"){
+      $.ajax("server/signout.php")
       .done(function(data){
-        console.log("Signing out...");
+        // console.log("Signing out...");
+        // console.log(data);
+        location.href = "./index.php";
       })
     }
   })
+
+
 
   $("#register_btn").click( ()=>{
     // console.log("Pressing Register Button!");
