@@ -32,6 +32,7 @@ if(isset($_POST['submit'])){
                 // header(`Location: ../index.php?user_id=${user_id}`);
             }elseif($user->userCategory == "admin") {
                 header('Location: ../adminpanel.php');
+                $_SESSION['admin']= "admin";
             }
             exit();
         }
