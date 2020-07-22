@@ -107,28 +107,30 @@ $(document).ready(function() {
               i++
             }
           }
-          // 
+          //
         }
       })
     }
   })
 
   $("#login_btn").click( ()=>{
-    if($("#login_btn").val()=="Login"){
+    // console.log($("#login_btn").text());
+    let btn_text = $("#login_btn").text().toString();
+    console.log(btn_text);
+    if(btn_text === "Login"){
       location.href = "./login.php";
     }
-    else if($("#login_btn").val()=="Sign Out"){
-      //End session and change the button value
-      $("#login_btn").val()=="Login";
+    else if($("#login_btn").text()=="Sign Out"){
+      console.log("this is not login");
+      $.ajax("./signout.php")
+      .done(function(data){
+        console.log("Signing out...");
+      })
     }
-    // $.ajax("./loging.php")
-    // .done(function(data){
-
-    // })
   })
 
   $("#register_btn").click( ()=>{
-    console.log("Pressing Register Button!");
+    // console.log("Pressing Register Button!");
     location.href = "./register.php";
   })
 
@@ -138,7 +140,7 @@ $(document).ready(function() {
   })
 
   // NOTE: idea https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_video_js_prop
-  // TODO: end this action, play video with external button 
+  // TODO: end this action, play video with external button
   
   let video = $("#video-0");
   
