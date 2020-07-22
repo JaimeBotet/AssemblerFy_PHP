@@ -19,7 +19,7 @@ require "./html/head.php";
                 <a class="navbar-brand text-light page_title p-0 m-1" href="index.php">Assemblerfy</a>
             </div>
             <!-- empty space -->
-            <div class="row row-col-3   col-7"></div>
+            <div class="col-7 text-white col d-flex justify-content-center">ADMIN</div>
             <!-- btn aside -->
             <div class="col">
                 <ul class="navbar form-inline d-flex justify-content-around custom-dot mb-0">
@@ -35,15 +35,15 @@ require "./html/head.php";
 
         <div id="users_container" class="d-flex justify-content-around mt-5">
 
-            <table class="table table-hover shadow-lg p-3 mb-5 rounded table-borderless w-50" id="table">
-              <thead class="table-info bg-dark text-white">
+            <table class="table table-dark w-50" id="table">
+              <thead class="bg-dark">
                 <tr>
                   <th scope="col">User Id</th>
                   <th scope="col">User Name</th>
                   <th scope="col">Deatils</th>
                 </tr>
               </thead>
-              <tbody id="table_body" class="table-info bg-light">         
+              <tbody id="table_body">         
                 
               </tbody>
             </table>
@@ -60,7 +60,7 @@ require "./html/head.php";
                 <h4 class="modal-title"></h4>
               </div>
               <div class="modal-body">
-                <table class="table table-hover shadow-lg p-3 mb-5 rounded table-borderless" id="table">
+                <table class="table table-hover shadow-lg p-3 mb-5 rounded table-borderless">
                   <thead class="table-info bg-dark text-white">
                     <tr>
                       <th scope="col">Track Id</th>
