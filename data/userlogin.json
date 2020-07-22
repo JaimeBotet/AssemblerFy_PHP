@@ -46,5 +46,11 @@
         "userName": "Jaime",
         "email": "jaime.90.botet@gmail.com",
         "password": "1234aB"
+    },
+    {
+        "id": 4,
+        "userName": "sasa",
+        "email": "sa@gmail.com",
+        "password": "AS123456s"
     }
 ]
