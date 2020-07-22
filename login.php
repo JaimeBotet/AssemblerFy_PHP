@@ -1,23 +1,19 @@
 <?php
 // Here the register page 
-
+session_start();
+$error="";
+$pass = "";
+if(isset($_GET['userErr'])){
+    $error = 'Must be between 4 and 10 chars';
+}
+if(isset($_GET['passErr'])){
+$pass = 'Password must contain at least one numeric digit, one uppercase and one lowercase letter';
+}
 
 //if the entered user has 'admin' attribute, it must be redirected to admin.php -> this will contain the admin panel
 //otherwise if the user is logged succesfully but is not admin, should be redirected to index.php
 ?>
 
-<?php
-session_start();
-if (isset($userName) || isset($password)) {
-    $userName  = $_REQUEST["username"];
-    $password = $_REQUEST["password"];
-    $_SESSION["username"] = $username;
-    $_SESSION["passwprd"] = $password;
-    echo "<script>location.href='index.php' </script>";
-}
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,18 +41,19 @@ if (isset($userName) || isset($password)) {
                                 <h3 class="mb-0 text-center text-dark">User login</h3>
                             </div>
                             <div class="card-body bg-dark ">
-                                <form autocomplete="off" class="form " role="form" action="index.php" method="POST">
+                                <form autocomplete="off" class="form " role="form" id="form" action="uservalidation.php" method="POST">
                                     <div class="form-group">
                                         <label for="inputName">Username</label>
                                         <input class="form-control" id="username" name="username" placeholder="Full name" type="text">
+                                         <small class="text-danger"><?php echo $error?></small>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputPassword3">Password</label>
                                         <input class="form-control" id="password" placeholder="Password" required="" name="password" type="password">
-                                        <small class="form-text text-muted" id="passwordHelpBlock">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
+                                        <small class="text-danger"><?php echo $pass?></small>
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn btn-success btn-lg float-right" type="submit" name="submit">Login</button>
+                                        <button class="btn btn-success btn-lg float-right" type="submit" id="submit" name="submit">Login</button>
                                         <!-- redirect to index.php  -->
                                     </div>
                                 </form>
@@ -73,10 +70,32 @@ if (isset($userName) || isset($password)) {
 
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+        // $('#submit').on('click',function(e){
+        //     e.preventDefault();
+        //     var datastring = new FormData($('#form')[0])
+        //     datastring.username = $('#username').val()
+        //     datastring.password = $('#password').val()
+        //     axios({
+        //         method:'POST',
+        //         url:'uservalidation.php',
+        //         data:{datastring},
+        //     }).then(function(res){
+        //         console.log(res.data)
+        //     })
+        // })
+
+
+
+
+    </script>
+
+
+
 </body>
 
 </html>
