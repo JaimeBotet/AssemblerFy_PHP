@@ -34,7 +34,7 @@ function getObj( string $url) : arrayObject
 }
 
 
-function searchByUserName(ArrayObject $obj ,string $user) : Stdclass
+function searchByUserName(ArrayObject $obj ,string $user) : Object
 {
   //iterate arrayobjects
   for ($i =0; $i < count($obj); $i++)

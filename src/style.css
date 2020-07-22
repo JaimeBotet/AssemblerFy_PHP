@@ -7,15 +7,16 @@ body {
     border: none;
     color: white;
 }
-.card img{
+/* .card img{
     height: 30vh;
-}
+} */
 .page_title{
     font-family: 'Lobster', cursive;
     font-size: 35px;
 }
 .assembler_logo{
-    width: 30px;
+    width: 50px;
+
 }
 .results_container{
     height: 78vh;
@@ -41,4 +42,10 @@ body {
 }
 .error{
     color: red;
+}
+.custom-min{
+    min-width: 70px;
+}
+.custom-dot{
+    list-style: none;
 }

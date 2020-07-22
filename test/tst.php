@@ -19,7 +19,7 @@
 // $newObj->data = new array()
 
 // path of json 
-$url = "../data/tst.json";
+// $url = "../data/tst.json";
 
 
 function getObj($url) : arrayObject
@@ -33,7 +33,7 @@ function getObj($url) : arrayObject
 }
 
 
-function searchByUserName(ArrayObject $obj ,string $user) : Stdclass
+function searchByUserName(ArrayObject $obj ,string $user) : object
 {
   //iterate arrayobjects
   for ($i =0; $i < count($obj); $i++)

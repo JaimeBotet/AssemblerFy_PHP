@@ -11,7 +11,7 @@ $(document).ready(function() {
       let type = $("#type").children(":selected").attr("id");
       let limit = $("#limit").children(":selected").attr("value");
       
-      e.preventDefault();
+      // e.preventDefault();
       $.ajax({
         url: "search.php",
         method: "GET",
@@ -28,12 +28,12 @@ $(document).ready(function() {
             for (let result of results) {
               $("#card_container").append(
                 `
-                <div class="card m-2">
-                  <img src="${result.artworkUrl100}" class="card-img-top" alt="...">
-                  <div class="card-body">
+                <div class="card col-3 col-md-4 col-sm-6 text-center my-5">
+                  <img src="${result.artworkUrl100.replace("100x100", "1000x1000")}" class="card-img-top my-3 w-100">
+                  <div class="card-body w-100">
                       <h5 class="card-title">${result.artistName}</h5>
-                      <p class="card-text">${result.collectionCensoredName}</p>
-                      <div class="btn btn-primary">Go somewhere</div>
+                      <p class="card-text py-4">${result.collectionCensoredName}</p>
+                      <div class="btn btn-primary">buy it</div>
                   </div>
                 </div>
                 `
