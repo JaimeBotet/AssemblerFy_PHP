@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+session_start();
 require "./html/head.php";
 ?>
 

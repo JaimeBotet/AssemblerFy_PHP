@@ -33,14 +33,14 @@ $(document).ready(function() {
                   <div class="card-body">
                       <h5 class="card-title">${result.artistName}</h5>
                       <p class="card-text">${result.collectionCensoredName}</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <div class="btn btn-primary">Go somewhere</div>
                   </div>
                 </div>
                 `
               )
             }
 
-          } else {
+          } else if (type == "song") {
             for (let result of results) {
               $("#card_container").append(
                 `
@@ -49,7 +49,31 @@ $(document).ready(function() {
                   <div class="card-body">
                       <h5 class="card-title">${result.artistName}</h5>
                       <p class="card-text">${result.trackName}</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <div class="card-text">
+                        <audio width="100%" height="auto" controls>
+                          <source src="${result.previewUrl}" type="audio/mpeg">
+                        </audio>
+                      </div>
+                      <div class="btn btn-primary">Go somewhere</div>
+                  </div>
+                </div>
+                `
+              )
+            }
+          } else {
+            for (let result of results) {
+              $("#card_container").append(
+                `
+                <div class="card m-2">
+                  <div class="card-body">
+                      <div class="card-text">
+                        <video width="100%" height="auto" controls>
+                          <source src="${result.previewUrl}">
+                        </video>
+                      </div>
+                      <h5 class="card-title">${result.artistName}</h5>
+                      <p class="card-text">${result.trackName}</p>                   
+                      <div class="btn btn-primary">Go somewhere</div>
                   </div>
                 </div>
                 `
@@ -60,6 +84,21 @@ $(document).ready(function() {
       })
     }
   })
+
+  $("#login_btn").click( ()=>{
+    $.ajax("../loging.php")
+    .done(function(data){
+
+    })
+  })
+
+  $("#register_btn").click( ()=>{
+    $.ajax("../register.php")
+    .done(function(data){
+
+    })
+  })
+
 
   $(document).ajaxComplete((e) => {
     $(".loading").hide()

@@ -19,7 +19,7 @@
 // $newObj->data = new array()
 
 // path of json 
-$url = "../data/data.json";
+// $url = "../data/data.json";
 
 
 
