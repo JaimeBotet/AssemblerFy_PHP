@@ -20,7 +20,7 @@ $(document).ready(function() {
           let response = JSON.parse(data);
           let results = response.results;
 
-          console.log(results)
+          // console.log(results)
  
           $("#card_container").empty();
 
@@ -44,17 +44,18 @@ $(document).ready(function() {
             for (let result of results) {
               $("#card_container").append(
                 `
-                <div class="card m-2">
-                  <img src="${result.artworkUrl100}" class="card-img-top" alt="...">
-                  <div class="card-body">
+                <div class="card col-3 col-md-4 col-sm-6 text-center my-5">
+                  <img src="${result.artworkUrl100.replace("100x100", "1000x1000")}" class="card-img-top my-3 w-100">
+                  <div class="card-body w-100">
                       <h5 class="card-title">${result.artistName}</h5>
-                      <p class="card-text">${result.trackName}</p>
-                      <div class="card-text">
+                      <p class="card-text py-4">${result.trackName}</p>
+                      <div class="card-text py-2">
                         <audio width="100%" height="auto" controls>
                           <source src="${result.previewUrl}" type="audio/mpeg">
+                          no disponible
                         </audio>
                       </div>
-                      <div class="btn btn-primary">Go somewhere</div>
+                      <div class="btn btn-primary">buy it</div>
                   </div>
                 </div>
                 `
@@ -64,16 +65,14 @@ $(document).ready(function() {
             for (let result of results) {
               $("#card_container").append(
                 `
-                <div class="card m-2">
-                  <div class="card-body">
-                      <div class="card-text">
-                        <video width="100%" height="auto" controls>
-                          <source src="${result.previewUrl}">
-                        </video>
-                      </div>
+                <div class="card col-3 col-md-4 col-sm-6 text-center my-5">
+                  <video class=" video-test" preload="none" poster="${result.artworkUrl100.replace("100x100", "200x200")}">
+                    <source src="${result.previewUrl}">
+                  </video>
+                  <div class="btn btn-light w-25 my-2 mx-auto">play</div>
+                  <div class="card-body w-100">
                       <h5 class="card-title">${result.artistName}</h5>
-                      <p class="card-text">${result.trackName}</p>                   
-                      <div class="btn btn-primary">Go somewhere</div>
+                      <p class="card-text py-4">${result.trackName}</p>
                   </div>
                 </div>
                 `

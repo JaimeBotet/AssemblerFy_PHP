@@ -49,3 +49,9 @@ body {
 .custom-dot{
     list-style: none;
 }
+.video-test{
+    width: 100%;
+    overflow-y: hidden;
+    min-height: 300px;
+    margin: auto 0;
+}
