@@ -45,12 +45,30 @@
         "user_id": 3,
         "userName": "Jaime",
         "email": "jaime.90.botet@gmail.com",
-        "password": "1234aB"
+        "password": "1234aB",
+        "userCategory": "user",
+        "data": []
     },
     {
         "id": 4,
         "userName": "sasa",
         "email": "sa@gmail.com",
         "password": "AS123456s"
+    },
+    {
+        "user_id": 5,
+        "userName": "albert",
+        "email": "albert@gmail.com",
+        "password": "AS123456s",
+        "userCategory": "user",
+        "data": []
+    },
+    {
+        "user_id": 6,
+        "userName": "albert1",
+        "email": "al@gmail.com",
+        "password": "As1234569",
+        "userCategory": "user",
+        "data": []
     }
 ]
