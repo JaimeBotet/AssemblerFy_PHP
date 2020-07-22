@@ -49,18 +49,16 @@ require "./html/head.php";
 
             </div>
             <!-- btn aside -->
-
             <div class="col">
                 <ul class="navbar form-inline d-flex justify-content-around custom-dot mb-0">
                     <li class=" col-5 ">
-                        <button class="btn btn-primary w-100 custom-min">Login</button>
+                        <button class="btn btn-primary w-100 custom-min" id="login_btn">Login</button>
                     </li>
                     <li class=" col-5">
-                        <button class="btn btn-primary w-100 custom-min">Register</button>
+                        <button class="btn btn-primary w-100 custom-min" id="register_btn">Register</button>
                     </li>
                 </ul>
             </div>
-
         </nav>
         <!-- Then a main container where we are showing random videos  -->
         <!-- This container will contain the result of the search -> without refreshing the page?  -->

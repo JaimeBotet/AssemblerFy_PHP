@@ -39,10 +39,7 @@ body {
     left: 50%;
 
 }
-/* .loading::after{
-    
-    content: "loanding...";
-} */
+
 .error{
     color: red;
 }
@@ -52,7 +49,7 @@ body {
 .custom-dot{
     list-style: none;
 }
-.video-test{
+.custom-video{
     width: 100%;
     overflow-y: hidden;
     min-height: 300px;

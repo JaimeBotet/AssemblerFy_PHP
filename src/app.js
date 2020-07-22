@@ -11,7 +11,6 @@ $(document).ready(function() {
       let type = $("#type").children(":selected").attr("id");
       let limit = $("#limit").children(":selected").attr("value");
       
-      // e.preventDefault();
       $.ajax({
         url: "search.php",
         method: "GET",
@@ -19,8 +18,6 @@ $(document).ready(function() {
         success: function(data) {
           let response = JSON.parse(data);
           let results = response.results;
-
-          // console.log(results)
  
           $("#card_container").empty();
 
@@ -67,7 +64,7 @@ $(document).ready(function() {
               $("#card_container").append(
                 `
                 <div class="card col-3 col-md-4 col-sm-6 text-center my-5">
-                  <video class="video-test" id="video-${i}" preload="none" poster="${result.artworkUrl100.replace("100x100", "200x200")}">
+                  <video class="custom-video" id="video-${i}" preload="none" poster="${result.artworkUrl100.replace("100x100", "200x200")}">
                     <source src="${result.previewUrl}">
                   </video>
                   <input type="button" class="btn btn-light w-25 my-2 mx-auto play" value="play">
@@ -104,6 +101,9 @@ $(document).ready(function() {
   $(document).ajaxComplete((e) => {
     $(".loading").hide()
   })
+
+  // NOTE: idea https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_video_js_prop
+  // TODO: end this action, play video with external button 
   
   let video = $("#video-0");
   
