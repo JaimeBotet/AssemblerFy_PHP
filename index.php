@@ -139,6 +139,7 @@ require "./html/head.php";
                     </rect>
                 </g>
             </svg>
+            <p class="w-100 text-center text-light mx-auto">Loading...</p>
         </div>
         <div id="card_container" class="results_container mt-2 rounded-sm d-flex p-3 flex-wrap justify-content-around">
 

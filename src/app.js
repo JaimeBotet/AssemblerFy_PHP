@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   
   $("#searchbar").on('keypress', function(e) {
     
@@ -7,7 +7,7 @@ $(document).ready(function() {
       $(document).ajaxStart((e) => {
         $(".loading").show()
       })
-      let search = $("#searchbar").val();
+      let search = $("#searchbar").val()
       let type = $("#type").children(":selected").attr("id");
       let limit = $("#limit").children(":selected").attr("value");
       
@@ -52,7 +52,7 @@ $(document).ready(function() {
                           no disponible
                         </audio>
                       </div>
-                      <div class="btn btn-primary">buy it</div>
+                      <div class="btn btn-primary w-50 mx-auto">buy it</div>
                   </div>
                 </div>
                 `
@@ -78,6 +78,7 @@ $(document).ready(function() {
               i++
             }
           }
+          // 
         }
       })
     }
@@ -118,4 +119,5 @@ $(document).ready(function() {
     playPause()
   })
 });
+
 
