@@ -46,7 +46,6 @@ require "./html/head.php";
                     </div>
                 </div>
 
-
             </div>
             <!-- btn aside -->
             <div class="col">
@@ -143,16 +142,10 @@ require "./html/head.php";
         </div>
         <div id="card_container" class="results_container mt-2 rounded-sm d-flex p-3 flex-wrap justify-content-around">
 
-
-            <!-- demo card -->
-
-
         </div>
 
     </main>
     <!-- And below of the page, the footer  -->
-
-
     <?php require "html/footer.php"; ?>
 
 </body>

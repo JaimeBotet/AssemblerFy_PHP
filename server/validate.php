@@ -1,12 +1,12 @@
 <?php
 
 include "./JSON_handler.php";
-$tmp = json_decode(file_get_contents("php://input"),true);
-$userName= $tmp['datastring']['username'];
+$tmp = json_decode(file_get_contents("php://input"), true);
+$userName = $tmp['datastring']['username'];
 $password = $tmp['datastring']['password'];
 $email = $tmp['datastring']['email'];
 // echo json_encode($tmp['datastring']);
- 
+
 $saveTojson = "../data/userlogin.json";
 $json = file_get_contents($saveTojson);
 $string = json_decode($json);
@@ -34,13 +34,13 @@ for ($i = 0; $i < count($string); $i++) {
 }
 
 $obj = new stdClass();
-$obj->id = count($string) + 1;
+$obj->user_id = count($string) + 1;
 $obj->userName = $userName;
 $obj->email = $email;
 $obj->password = $password;
+$obj->userCategory = "user";
+$obj->data = array();
 array_push($string, $obj);
 $json_string = json_encode($string, JSON_PRETTY_PRINT);
 file_put_contents($saveTojson, $json_string);
 echo $json_string;
-
-

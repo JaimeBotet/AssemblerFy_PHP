@@ -1,4 +1,32 @@
 $(document).ready(function() {
+  $.ajax({
+    url: "https://itunes.apple.com/search?term=song",
+    success: (data)=>{
+      let response = JSON.parse(data);
+      let results = response.results;
+
+      for (let result of results) {
+        $("#card_container").append(
+          `
+          <div class="card col-3 col-md-4 col-sm-6 text-center my-5">
+                  <img src="${result.artworkUrl100.replace("100x100", "1000x1000")}" class="card-img-top my-3 w-100">
+                  <div class="card-body w-100">
+                      <h5 class="card-title">${result.artistName}</h5>
+                      <p class="card-text py-4">${result.trackName}</p>
+                      <div class="card-text py-2">
+                        <audio width="100%" height="auto" controls>
+                          <source src="${result.previewUrl}" >
+                          no disponible
+                        </audio>
+                      </div>
+                      <div class="btn btn-primary w-50 mx-auto">Play</div>
+                  </div>
+                </div>
+          `
+        )
+      }
+    }
+  })
 
   // Search bar functionality
 
@@ -53,7 +81,7 @@ $(document).ready(function() {
                           no disponible
                         </audio>
                       </div>
-                      <div class="btn btn-primary w-50 mx-auto">buy it</div>
+                      <div class="btn btn-primary w-50 mx-auto">Play</div>
                   </div>
                 </div>
                 `
@@ -86,11 +114,17 @@ $(document).ready(function() {
   })
 
   $("#login_btn").click( ()=>{
-    location.href = "./login.php";
-    $.ajax("./loging.php")
-    .done(function(data){
+    if($("#login_btn").val()=="Login"){
+      location.href = "./login.php";
+    }
+    else if($("#login_btn").val()=="Sign Out"){
+      //End session and change the button value
+      $("#login_btn").val()=="Login";
+    }
+    // $.ajax("./loging.php")
+    // .done(function(data){
 
-    })
+    // })
   })
 
   $("#register_btn").click( ()=>{
