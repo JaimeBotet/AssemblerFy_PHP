@@ -19,7 +19,7 @@ $(document).ready(function() {
                           no disponible
                         </audio>
                       </div>
-                      <div class="btn btn-primary w-50 mx-auto">Play</div>
+                      <div class="btn btn-primary w-50 mx-auto" data="${result.trackId}">Play</div>
                   </div>
                 </div>
           `
@@ -81,7 +81,7 @@ $(document).ready(function() {
                           no disponible
                         </audio>
                       </div>
-                      <div class="btn btn-primary w-50 mx-auto">Play</div>
+                      <div class="btn btn-primary w-50 mx-auto" data="${result.trackId}">Play</div>
                   </div>
                 </div>
                 `
@@ -205,6 +205,10 @@ $(document).ready(function() {
   }
 
   loadUsers();
+
+  function appendSong (res) {
+
+  }
 
 
 });
