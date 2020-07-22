@@ -1,350 +1,46 @@
 [
     {
-        "id": 1,
+        "user_id": 1,
         "userName": "g",
         "email": "g@gmail.com",
-        "password": "1234"
+        "password": "1234",
+        "userCategory": "admin",
+        "data":
+            [
+                {
+                    "track_id": 1,
+                    "track_title": "Cold",
+                    "track_category": "audio",
+                    "reproductions" : 1
+                },
+                {
+                    "track_id": 2,
+                    "track_title": "Sky full of stars",
+                    "track_category": "audio",
+                    "reproductions" : 1
+                }
+            ]
     },
     {
-        "id": 1,
+        "user_id": 2,
         "userName": "g",
         "email": "g@gmail.com",
-        "password": "1234"
-    },
-    {
-        "id": 3,
-        "userName": "g",
-        "email": "g@gmail.com",
-        "password": "1234"
-    },
-    {
-        "id": 4,
-        "userName": "g",
-        "email": "g@gmail.com",
-        "password": "123"
-    },
-    {
-        "id": 5,
-        "userName": "g",
-        "email": "g@gmail.com",
-        "password": "123"
-    },
-    {
-        "id": 6,
-        "userName": "sayeeeeeed",
-        "email": "sayeeeed@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 7,
-        "userName": "g",
-        "email": "g@gmail.com",
-        "password": "1234"
-    },
-    {
-        "id": 8,
-        "userName": "sayeed",
-        "email": "sasa@gmail.com",
-        "password": "12456"
-    },
-    {
-        "id": 9,
-        "userName": "syeed",
-        "email": "s@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 10,
-        "userName": "sayeed",
-        "email": "sa@gmail.com",
-        "password": "1234"
-    },
-    {
-        "id": 11,
-        "userName": "sayeed",
-        "email": "sasa@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 12,
-        "userName": "sayeed",
-        "email": "sasa@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 13,
-        "userName": "sayeed",
-        "email": "sasa@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 14,
-        "userName": "sayeed",
-        "email": "sasa@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 15,
-        "userName": "sayeed",
-        "email": "sasa@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 16,
-        "userName": "sasa",
-        "email": "s@gmail.com",
-        "password": "1234"
-    },
-    {
-        "id": 17,
-        "userName": "sayeed",
-        "email": "sasas@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 18,
-        "userName": "sasa",
-        "email": "asa@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 19,
-        "userName": "sa",
-        "email": "sassa@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 20,
-        "userName": "sa",
-        "email": "sas@gmail.com",
-        "password": "12345"
-    },
-    {
-        "id": 21,
-        "userName": "sayeed0209",
-        "email": "s@gmail.com",
-        "password": "1234"
-    },
-    {
-        "id": 22,
-        "userName": "sayeed",
-        "email": null,
-        "password": "123456"
-    },
-    {
-        "id": 23,
-        "userName": "sayeed",
-        "email": null,
-        "password": "1234"
-    },
-    {
-        "id": 24,
-        "userName": "sayeed",
-        "email": null,
-        "password": "1234"
-    },
-    {
-        "id": 25,
-        "userName": "sayeed",
-        "email": null,
-        "password": "1234"
-    },
-    {
-        "id": 26,
-        "userName": "sa",
-        "email": "sas@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 27,
-        "userName": "sasa",
-        "email": "sas@gmail.com",
-        "password": "12345"
-    },
-    {
-        "id": 28,
-        "userName": "sasas",
-        "email": "sas@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 29,
-        "userName": "sas",
-        "email": "sayeed@gmail.com",
-        "password": "1234"
-    },
-    {
-        "id": 30,
-        "userName": "sdasd",
-        "email": "s@gmail.com",
-        "password": "1234"
-    },
-    {
-        "id": 31,
-        "userName": "sas",
-        "email": "sa@gmailcom",
-        "password": "123"
-    },
-    {
-        "id": 32,
-        "userName": "",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 33,
-        "userName": "",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 34,
-        "userName": "",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 35,
-        "userName": "",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 36,
-        "userName": "",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 37,
-        "userName": "",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 38,
-        "userName": "",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 39,
-        "userName": "",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 40,
-        "userName": "",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 41,
-        "userName": "sas",
-        "email": "sa@gmail.com",
-        "password": "sas"
-    },
-    {
-        "id": 42,
-        "userName": "",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 43,
-        "userName": "",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 44,
-        "userName": "",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 45,
-        "userName": "sas",
-        "email": "sas@gmail.com",
-        "password": "123456"
-    },
-    {
-        "id": 46,
-        "userName": "sass",
-        "email": "sasa@gmail.com",
-        "password": "sasas"
-    },
-    {
-        "id": 47,
-        "userName": "wqs",
-        "email": "ass@gmail.com",
-        "password": "12345"
-    },
-    {
-        "id": 48,
-        "userName": "elena",
-        "email": "sayeed123@gmail.com",
-        "password": "12345"
-    },
-    {
-        "id": 49,
-        "userName": "sas222",
-        "email": "sassa@gmail.com",
-        "password": "sa"
-    },
-    {
-        "id": 50,
-        "userName": "sa",
-        "email": "safdtg@gmail.com",
-        "password": "13134"
-    },
-    {
-        "id": 51,
-        "userName": "sa",
-        "email": "ieyiwy@mail.com",
-        "password": "1235"
-    },
-    {
-        "id": 52,
-        "userName": "alex",
-        "email": "s@g.com",
-        "password": "123"
-    },
-    {
-        "id": 53,
-        "userName": "alex123",
-        "email": "a@gmail.com",
-        "password": "12345"
-    },
-    {
-        "id": 54,
-        "userName": "alex",
-        "email": "a@gmail.com",
-        "password": "12345"
-    },
-    {
-        "id": 55,
-        "userName": "asss",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": 56,
-        "userName": "asss",
-        "email": "sasa",
-        "password": "sas"
-    },
-    {
-        "id": 57,
-        "userName": "sasa",
-        "email": "sa@g.com",
-        "password": "1AS12345sas"
-    },
-    {
-        "id": 58,
-        "userName": "alex",
-        "email": "alex@gmail.com",
-        "password": "As123456"
+        "password": "1234",
+        "userCategory": "user",
+        "data":
+            [
+                {
+                    "track_id": 1,
+                    "track_title": "Cold",
+                    "track_category": "audio",
+                    "reproductions" : 1
+                },
+                {
+                    "track_id": 2,
+                    "track_title": "Sky full of stars",
+                    "track_category": "audio",
+                    "reproductions" : 1
+                }
+            ]
     }
 ]
