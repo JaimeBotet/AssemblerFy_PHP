@@ -28,7 +28,8 @@ $(document).ready(function() {
     }
   })
 
-  
+  // Search bar functionality
+
   $("#searchbar").on('keypress', function(e) {
     
     if(e.which == 13) {
@@ -151,6 +152,56 @@ $(document).ready(function() {
   
     playPause()
   })
+
+
+// Loading Users in admin panel
+
+  function loadUsers() {
+    $.get("loadAdminPanel.php", function(data){
+      let users = JSON.parse(data);
+      $("#table_body").empty();
+
+      for (let user of users) {
+        $("#table_body").append(
+          `
+          <tr>
+            <td scope="col">${user.user_id}</th>
+            <td scope="col">${user.userName}</th>
+            <td scope="col"><button type='button' class="btn btn-info" id="user_${user.user_id}" data-toggle="modal" data-target="#myModal">Details</button></th>
+          </tr>
+          `
+        )
+        
+        $(`#user_${user.user_id}`).click(function() {
+          
+          let actions = user.data;
+          
+          $(".modal-title").empty();
+          $(".modal-title").text(`User history: ${user.userName}`);
+
+          $("#history").empty();
+
+          for (let el of actions) {
+            $("#history").append(
+              `
+              <tr>
+                <td scope="col">${el.track_id}</th>
+                <td scope="col">${el.track_title}</th>
+                <td scope="col">${el.track_category}</th>
+                <td scope="col">${el.reproductions}</th>
+              </tr>
+              `
+            )
+          }
+
+        })
+      }
+    })
+  }
+
+  loadUsers();
+
+
 });
 
 
