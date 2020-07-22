@@ -63,4 +63,3 @@ function saveJson(ArrayObject $mainObj, string $url) : void
   // overwrite file.json
   file_put_contents($url,$json);
 }
-  
