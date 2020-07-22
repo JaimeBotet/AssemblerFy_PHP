@@ -2,7 +2,7 @@
 
   //$userName = $_SESSION['userName'];
 
-  $users = json_decode(file_get_contents("data/userlogin.json"));
+  $users = json_decode(file_get_contents("../data/userlogin.json"));
 
   $favouritesIds = [];
   

@@ -34,11 +34,11 @@ $(document).ready(function() {
   
   //history.pushState({page: 1}, "title 1", "?user_id=2")
   
-  let url = window.location.href; 
+  let url = window.location.href;
 
   if (url.includes("user_id")) {
 
-    $.get("preferences.php", function(data) {
+    $.get("./server/preferences.php", function(data) {
 
       let response = JSON.parse(data);
       let favorites = response.results;
@@ -70,11 +70,11 @@ $(document).ready(function() {
 
     })
   }
-  
+
   // Search bar functionality
 
   $("#searchbar").on('keypress', function(e) {
-    
+
     if(e.which == 13) {
       $(document).ajaxStart((e) => {
         $(".loading").show()
