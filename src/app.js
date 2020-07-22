@@ -84,7 +84,7 @@ $(document).ready(function() {
       let limit = $("#limit").children(":selected").attr("value");
       
       $.ajax({
-        url: "search.php",
+        url: "server/search.php",
         method: "GET",
         data: {search:search, type:type, limit:limit},
         success: function(data) {
@@ -201,7 +201,7 @@ $(document).ready(function() {
 // Loading Users in admin panel
 
   function loadUsers() {
-    $.get("loadAdminPanel.php", function(data){
+    $.get("server/loadAdminPanel.php", function(data){
       let users = JSON.parse(data);
       $("#table_body").empty();
 
