@@ -16,7 +16,7 @@ require "./html/head.php";
             <div class="col d-flex justify-content-center">
                 <img class=" assembler_logo m-1"
                     src="https://media-exp1.licdn.com/dms/image/C560BAQHR2BMbsLm7zQ/company-logo_200_200/0?e=2159024400&v=beta&t=6CkD1A_wUzSd4CM7zn6mjo9AybK5aReonvFkuOI0WMo">
-                <a class="navbar-brand text-light page_title p-0 m-1" href="#">Assemblerfy</a>
+                <a class="navbar-brand text-light page_title p-0 m-1" href="index.php">Assemblerfy</a>
             </div>
             <!-- input side -->
             <div class="row row-col-3   col-7">
