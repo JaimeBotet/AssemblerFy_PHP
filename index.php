@@ -8,10 +8,8 @@ require "./html/head.php";
 <body>
     <main class="container-fluid py-2">
         <!-- Here comes a nav bar  -->
-        <!-- The nav bar will contain the logo, Register Button, Log in button and Admin button  -->
-        <!-- Then a search bar is displayed below -->
+        <!-- The nav bar will contain the logo, Register Button, Log in button and Search Bar  -->
         <nav class="navbar  navbar-light bg-dark mx-auto rounded-sm d-flex justify-content-center row row-col-3 ">
-
             <!-- logo -->
             <div class="col d-flex justify-content-center">
                 <img class=" assembler_logo m-1"
@@ -51,10 +49,22 @@ require "./html/head.php";
             <div class="col">
                 <ul class="navbar form-inline d-flex justify-content-around custom-dot mb-0">
                     <li class=" col-5 ">
-                        <button class="btn btn-primary w-100 custom-min" id="login_btn">Login</button>
+                        <button class="btn btn-primary w-100 custom-min" id="login_btn">
+                            <?php if (isset($_SESSION['username'])){ ?>
+                            Sign Out
+                            <?php } else { ?>
+                            Login
+                            <?php } ?>
+                        </button>
                     </li>
                     <li class=" col-5">
-                        <button class="btn btn-primary w-100 custom-min" id="register_btn">Register</button>
+                        <button class="btn btn-primary w-100 custom-min" id="register_btn"
+                        <?php if (isset($_SESSION['username'])){ ?>
+                            style="display: none;"
+                        <?php } else { ?>
+                            style="display: block;"
+                        <?php } ?>
+                        >Register</button>
                     </li>
                 </ul>
             </div>
