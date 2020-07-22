@@ -114,12 +114,14 @@ $(document).ready(function() {
   })
 
   $("#login_btn").click( ()=>{
-    console.log($("#login_btn").text());
-    if($("#login_btn").text()=="Login"){
+    // console.log($("#login_btn").text());
+    let btn_text = $("#login_btn").text().toString();
+    console.log(btn_text);
+    if(btn_text === "Login"){
       location.href = "./login.php";
     }
     else if($("#login_btn").text()=="Sign Out"){
-      //TODO delete current session
+      console.log("this is not login");
       $.ajax("./signout.php")
       .done(function(data){
         console.log("Signing out...");

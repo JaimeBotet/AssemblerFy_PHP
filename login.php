@@ -41,7 +41,7 @@ $pass = 'Password must contain at least one numeric digit, one uppercase and one
                                 <h3 class="mb-0 text-center text-dark">User login</h3>
                             </div>
                             <div class="card-body bg-dark ">
-                                <form autocomplete="off" class="form " role="form" id="form" action="uservalidation.php" method="POST">
+                                <form autocomplete="off" class="form " role="form" id="form" action="server/login_validation.php" method="POST">
                                     <div class="form-group">
                                         <label for="inputName">Username</label>
                                         <input class="form-control" id="username" name="username" placeholder="Full name" type="text">
