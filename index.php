@@ -6,11 +6,11 @@ require "./html/head.php";
 ?>
 
 <body>
-    <main class="container-fluid pt-2 pb-2">
+    <main class="container-fluid py-2">
         <!-- Here comes a nav bar  -->
         <!-- The nav bar will contain the logo, Register Button, Log in button and Admin button  -->
         <!-- Then a search bar is displayed below -->
-        <nav class="navbar  navbar-light bg-dark w-100 rounded-sm d-flex justify-content-center row row-col-3 ">
+        <nav class="navbar  navbar-light bg-dark mx-auto rounded-sm d-flex justify-content-center row row-col-3 ">
 
             <!-- logo -->
             <div class="col d-flex justify-content-center">
