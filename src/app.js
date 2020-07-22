@@ -62,17 +62,16 @@ $(document).ready(function() {
   })
 
   $("#login_btn").click( ()=>{
-    $.ajax("../loging.php")
+    location.href = "./login.php";
+    $.ajax("./loging.php")
     .done(function(data){
 
     })
   })
 
   $("#register_btn").click( ()=>{
-    $.ajax("../register.php")
-    .done(function(data){
-
-    })
+    console.log("Pressing Register Button!");
+    location.href = "./register.php";
   })
 
 
