@@ -28,6 +28,11 @@ $(document).ready(function() {
     }
   })
 
+  //if in the url looks like index.php?user_id=${user_id}  then it means we have an active session
+  // if(url.contains("user_id")){
+  //   foreach(...)
+  // }
+
   // Search bar functionality
 
   $("#searchbar").on('keypress', function(e) {
@@ -114,7 +119,6 @@ $(document).ready(function() {
   })
 
   $("#login_btn").click( ()=>{
-    // console.log($("#login_btn").text());
     let btn_text = $("#login_btn").text().trim();
 
     if(btn_text === "Login"){
@@ -123,13 +127,10 @@ $(document).ready(function() {
     else if(btn_text === "Sign Out"){
       $.ajax("server/signout.php")
       .done(function(data){
-        // console.log("Signing out...");
-        // console.log(data);
         location.href = "./index.php";
       })
     }
   })
-
 
 
   $("#register_btn").click( ()=>{
