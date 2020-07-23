@@ -61,7 +61,13 @@ $(document).ready(function() {
                           no disponible
                         </audio>
                       </div>
-                      <div class="btn btn-primary w-50 mx-auto" data="${result.trackId}">Play</div>
+                      <div 
+                      class="btn btn-primary w-50 mx-auto check-song"
+                      name="checkLogin"  
+                      data-id="${result.trackId}"
+                      data-genre="${result.primaryGenreName}"
+                      data-title="${result.collectionCensoredName}">Play</div>
+        
                   </div>
                 </div>
           `
@@ -90,6 +96,7 @@ $(document).ready(function() {
         success: function(data) {
           let response = JSON.parse(data);
           let results = response.results;
+          console.log(results)
  
           $("#card_container").empty();
 
@@ -124,22 +131,28 @@ $(document).ready(function() {
                           no disponible
                         </audio>
                       </div>
-                      <div class="btn btn-primary w-50 mx-auto" data="${result.trackId}">Play</div>
+                      <div 
+                      class="btn btn-primary w-50 mx-auto check-song"
+                      name="checkLogin"  
+                      data-id="${result.trackId}"
+                      data-genre="${result.primaryGenreName}"
+                      data-title="${result.collectionCensoredName}">Play</div>
+        
                   </div>
                 </div>
                 `
               )
             }
           } else {
+            let i = 0;
             for (let result of results) {
-              let i = 0;
               $("#card_container").append(
                 `
                 <div class="card col-3 col-md-4 col-sm-6 text-center my-5">
                   <video class="custom-video" id="video-${i}" preload="none" poster="${result.artworkUrl100.replace("100x100", "200x200")}">
                     <source src="${result.previewUrl}">
                   </video>
-                  <input type="button" class="btn btn-light w-25 my-2 mx-auto play" value="play">
+                  <input type="button" class="btn btn-light w-25 my-2 mx-auto check-video" value="play">
                   <div class="card-body w-100">
                       <h5 class="card-title">${result.artistName}</h5>
                       <p class="card-text py-4">${result.trackName}</p>
@@ -181,6 +194,39 @@ $(document).ready(function() {
     $(".loading").hide()
   })
 
+  // check login, if the user is login show preview and save info
+
+  $(document).on("click", (e)=>{
+
+    const element = $(e.target);
+
+    if (element.hasClass('check-song')) {
+      var dataId = element.data('id')
+      var dataGenre = element.data('genre')
+      var dataTitle = element.data('title')
+      // console.log(dataId + " "+dataGenre+" "+dataTitle)
+      $.ajax({
+        type: "GET",
+        url: "./server/login_validation.php",
+        data: "checkLogin",
+        success: function (response) {
+          
+          if(response == "true"){
+            console.log("ok")
+            $("audio").css("display", "block")
+          }else{
+            $("#needlog").css("display", "block")
+          }
+          
+        }
+      });
+    }
+
+  })
+
+
+  
+  
   // NOTE: idea https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_video_js_prop
   // TODO: end this action, play video with external button
   
