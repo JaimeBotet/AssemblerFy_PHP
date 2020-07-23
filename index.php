@@ -150,7 +150,7 @@ require "./html/head.php";
             </svg>
             <p class="w-100 text-center text-light mx-auto">Loading...</p>
         </div>
-        <div class="bg-danger text-center py-3 text-light" id="needlog">Need log in...</div>
+        <div class="bg-danger text-center py-3 text-light" id="needlog">Need log in to reproduce content...</div>
         <div id="card_container" class="results_container mt-2 rounded-sm d-flex p-3 flex-wrap justify-content-around">
 
         </div>
