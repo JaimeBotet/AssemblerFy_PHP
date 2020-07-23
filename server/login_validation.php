@@ -27,11 +27,13 @@ if(isset($_POST['submit'])){
             $_SESSION['user_id'] = $user->user_id;
             $_SESSION['password'] = $password;
             if($user->userCategory == "user"){
-                header("Location: ../index.php");
+                $location = "Location: ../index.php?user_id=". $user->user_id;
+                header($location);
                 //To pass any user parameter we do it through the url:
                 // header(`Location: ../index.php?user_id=${user_id}`);
             }elseif($user->userCategory == "admin") {
                 header('Location: ../adminpanel.php');
+                $_SESSION['admin']= "admin";
             }
             exit();
         }
@@ -40,4 +42,11 @@ if(isset($_POST['submit'])){
     header("Location:login.php?error=".$error); 
 
  }
+}
+if(isset($_GET["checkLogin"])){
+   if(isset($_SESSION['user_id'])){
+       echo "true";
+   }else{
+       echo "false";
+   }
 }

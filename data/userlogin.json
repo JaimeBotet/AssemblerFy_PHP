@@ -28,13 +28,13 @@
         "userCategory": "user",
         "data": [
             {
-                "track_id": 1,
+                "track_id": 1440818653,
                 "track_title": "Cold",
                 "track_category": "audio",
                 "reproductions": 1
             },
             {
-                "track_id": 2,
+                "track_id": 169003415,
                 "track_title": "Sky full of stars",
                 "track_category": "audio",
                 "reproductions": 1
@@ -47,7 +47,20 @@
         "email": "jaime.90.botet@gmail.com",
         "password": "1234aB",
         "userCategory": "user",
-        "data": []
+        "data": [
+            {
+                "track_id": 169003415,
+                "track_title": "Cold",
+                "track_category": "audio",
+                "reproductions": 1
+            },
+            {
+                "track_id": 169003415,
+                "track_title": "Sky full of stars",
+                "track_category": "audio",
+                "reproductions": 1
+            }
+        ]
     },
     {
         "user_id": 4,

@@ -7,7 +7,8 @@
         unset($_SESSION['userName']);
         unset($_SESSION['password']);
         unset($_SESSION['user_id']);
-        // header("Location: ../index.php");
+        if (isset($_SESSION['admin'])) unset($_SESSION['admin']);
+
         exit();
     }
 
