@@ -1,28 +1,5 @@
 <?php 
 
-/**************************************************
- * ---- Test for array inside array of a obj ---- *
- **************************************************/
-// echo "<pre>";
-// var_dump($stringJson);
-// $stringJson[0]->userID; // return userID of the first object or object with index 0
-// $stringJson[0]->data[0]->trackId; // return trackId of the first data of the first object
-
-/**************************************************
- * ----- Example for new object with session----- * 
- **************************************************/ 
-
-// $newObj = new stdClass();
-// $newObj->userID = count($stringJson)+1; // add id always the lasta index of array plus one 
-// $newObj->userName = $_SESSION["user-name"];
-// $newObj->lastName = $_SESSION["last-name"];
-// $newObj->data = new array()
-
-// path of json 
-// $url = "../data/data.json";
-
-
-
 function getObj( string $url) : arrayObject
 {
   // get the content json

@@ -19,7 +19,7 @@ $(document).ready(function() {
                           no disponible
                         </audio>
                       </div>
-                      <div class="btn btn-primary w-50 mx-auto">Play</div>
+                      <div class="btn btn-primary w-50 mx-auto" data="${result.trackId}">Play</div>
                   </div>
                 </div>
           `
@@ -28,10 +28,65 @@ $(document).ready(function() {
     }
   })
 
+  //if in the url looks like index.php?user_id=${user_id}  then it means we have an active session
+  
+  // setting url just to test the functionality
+  
+  //history.pushState({page: 1}, "title 1", "?user_id=2")
+  
+  let url = window.location.href;
+
+  if (url.includes("user_id")) {
+
+    $.get("./server/preferences.php", function(data) {
+      
+      let response = JSON.parse(data);
+      let favorites = response.results;
+      console.log(favorites);
+
+      $("#card_container").empty();
+      
+      for (let result of favorites) {
+        
+        $("#card_container").append(
+          `
+          <div class="card col-3 col-md-4 col-sm-6 text-center my-5">
+                  <img src="${result.artworkUrl100.replace("100x100", "1000x1000")}" class="card-img-top my-3 w-100">
+                  <div class="card-body w-100">
+                      <h5 class="card-title">${result.artistName}</h5>
+                      <p class="card-text py-4">${result.trackName}</p>
+                      <div class="card-text py-2">
+                        <audio width="100%" height="auto" controls>
+                          <source src="${result.previewUrl}" >
+                          no disponible
+                        </audio>
+                      </div>
+                      <div 
+                      class="btn btn-primary w-50 mx-auto check-song"
+                      name="checkLogin"  
+                      data-id="${result.trackId}"
+                      data-genre="${result.primaryGenreName}"
+                      data-title="${result.collectionCensoredName}">Play</div>
+        
+                  </div>
+                </div>
+          `
+        )
+      }
+
+    })
+
+    $("#needlog").hide();
+  }
+  else{
+    $("#needlog").show();
+  }
+
+
   // Search bar functionality
 
   $("#searchbar").on('keypress', function(e) {
-    
+
     if(e.which == 13) {
       $(document).ajaxStart((e) => {
         $(".loading").show()
@@ -41,12 +96,13 @@ $(document).ready(function() {
       let limit = $("#limit").children(":selected").attr("value");
       
       $.ajax({
-        url: "search.php",
+        url: "server/search.php",
         method: "GET",
         data: {search:search, type:type, limit:limit},
         success: function(data) {
           let response = JSON.parse(data);
           let results = response.results;
+          console.log(results)
  
           $("#card_container").empty();
 
@@ -81,22 +137,27 @@ $(document).ready(function() {
                           no disponible
                         </audio>
                       </div>
-                      <div class="btn btn-primary w-50 mx-auto">Play</div>
+                      <div 
+                      class="btn btn-primary w-50 mx-auto check-song"
+                      name="checkLogin"  
+                      data-id="${result.trackId}"
+                      data-genre="${result.primaryGenreName}"
+                      data-title="${result.collectionCensoredName}">Play</div>
                   </div>
                 </div>
                 `
               )
             }
           } else {
+            let i = 0;
             for (let result of results) {
-              let i = 0;
               $("#card_container").append(
                 `
                 <div class="card col-3 col-md-4 col-sm-6 text-center my-5">
                   <video class="custom-video" id="video-${i}" preload="none" poster="${result.artworkUrl100.replace("100x100", "200x200")}">
                     <source src="${result.previewUrl}">
                   </video>
-                  <input type="button" class="btn btn-light w-25 my-2 mx-auto play" value="play">
+                  <input type="button" class="btn btn-light w-25 my-2 mx-auto check-video" value="play">
                   <div class="card-body w-100">
                       <h5 class="card-title">${result.artistName}</h5>
                       <p class="card-text py-4">${result.trackName}</p>
@@ -114,7 +175,6 @@ $(document).ready(function() {
   })
 
   $("#login_btn").click( ()=>{
-    // console.log($("#login_btn").text());
     let btn_text = $("#login_btn").text().trim();
 
     if(btn_text === "Login"){
@@ -123,13 +183,10 @@ $(document).ready(function() {
     else if(btn_text === "Sign Out"){
       $.ajax("server/signout.php")
       .done(function(data){
-        // console.log("Signing out...");
-        // console.log(data);
         location.href = "./index.php";
       })
     }
   })
-
 
 
   $("#register_btn").click( ()=>{
@@ -142,6 +199,39 @@ $(document).ready(function() {
     $(".loading").hide()
   })
 
+  // check login, if the user is login show preview and save info
+
+  $(document).on("click", (e)=>{
+
+    const element = $(e.target);
+
+    if (element.hasClass('check-song')) {
+      var dataId = element.data('id')
+      var dataGenre = element.data('genre')
+      var dataTitle = element.data('title')
+      // console.log(dataId + " "+dataGenre+" "+dataTitle)
+      $.ajax({
+        type: "GET",
+        url: "./server/login_validation.php",
+        data: {checkLogin:"checkLogin", dataId:dataId, dataGenre:dataGenre, dataTitle:dataTitle},
+        success: function (response) {
+          console.log(response)
+          if(response == "true"){
+            console.log("ok")
+            $("audio").css("display", "block")
+          }else{
+            $("#needlog").css("display", "block")
+          }
+          
+        }
+      });
+    }
+
+  })
+
+
+  
+  
   // NOTE: idea https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_video_js_prop
   // TODO: end this action, play video with external button
   
@@ -162,7 +252,7 @@ $(document).ready(function() {
 // Loading Users in admin panel
 
   function loadUsers() {
-    $.get("loadAdminPanel.php", function(data){
+    $.get("server/loadAdminPanel.php", function(data){
       let users = JSON.parse(data);
       $("#table_body").empty();
 
@@ -205,6 +295,10 @@ $(document).ready(function() {
   }
 
   loadUsers();
+
+  function appendSong (res) {
+
+  }
 
 
 });

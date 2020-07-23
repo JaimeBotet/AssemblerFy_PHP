@@ -3,6 +3,14 @@
 <?php
 session_start();
 require "./html/head.php";
+
+if (!isset($_SESSION['admin'])){
+  echo "Redirecting to index.php...";
+  // session_destroy();
+
+  header("Location: ./index.php");
+  exit();
+}
 ?>
 
 <body>

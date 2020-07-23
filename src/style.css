@@ -55,3 +55,11 @@ body {
     min-height: 300px;
     margin: auto 0;
 }
+#needlog{
+    display: none;
+}
+
+audio{
+    display: none;
+    /* display: contents; */
+}
