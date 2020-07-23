@@ -75,7 +75,13 @@ $(document).ready(function() {
       }
 
     })
+
+    $("#needlog").hide();
   }
+  else{
+    $("#needlog").show();
+  }
+
 
   // Search bar functionality
 
@@ -137,7 +143,6 @@ $(document).ready(function() {
                       data-id="${result.trackId}"
                       data-genre="${result.primaryGenreName}"
                       data-title="${result.collectionCensoredName}">Play</div>
-        
                   </div>
                 </div>
                 `

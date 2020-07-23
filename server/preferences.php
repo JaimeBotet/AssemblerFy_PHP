@@ -1,6 +1,6 @@
 <?php
-
-  //$userName = $_SESSION['userName'];
+  session_start();
+  $userName = $_SESSION['userName'];
 
   $users = json_decode(file_get_contents("../data/userlogin.json"));
 
@@ -9,7 +9,7 @@
 
   foreach($users as $user) {
 
-    if ($user->userName == "pepe") {
+    if ($user->userName == $userName) {
 
       $favouriteTracks = $user->data;
 
