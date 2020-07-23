@@ -39,7 +39,7 @@ $(document).ready(function() {
   if (url.includes("user_id")) {
 
     $.get("./server/preferences.php", function(data) {
-
+      
       let response = JSON.parse(data);
       let favorites = response.results;
       console.log(favorites);
@@ -213,9 +213,9 @@ $(document).ready(function() {
       $.ajax({
         type: "GET",
         url: "./server/login_validation.php",
-        data: "checkLogin",
+        data: {checkLogin:"checkLogin", dataId:dataId, dataGenre:dataGenre, dataTitle:dataTitle},
         success: function (response) {
-          
+          console.log(response)
           if(response == "true"){
             console.log("ok")
             $("audio").css("display", "block")

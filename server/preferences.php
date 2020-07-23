@@ -21,7 +21,7 @@
   }
 
   $query = implode(",", $favouritesIds);
- 
+
 
   $url = "https://itunes.apple.com/lookup?id=$query";
   $ch = curl_init($url);
